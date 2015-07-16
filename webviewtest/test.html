@@ -7,15 +7,23 @@ This is a HTML Page
 <script type="text/javascript">
 
 
-function getCookie(name) {
-    var search;
-     return "";
+ 
+
+function   getcookie(cookiename){ 
+var   cookiestring   =   document.cookie; 
+var   start   =   cookiestring.indexof(cookiename   +   '= '); 
+if   (start   ==   -1)   //   找不到 
+return   null; 
+start +=   cookiename.length   +   1; 
+var   end   =   cookiestring.indexof( "; ",   start); 
+if   (end   ==   -1)   return   unescape(cookiestring.substring(start)); 
+return   unescape(cookiestring.substring(start,   end)); 
 }
 
     //JavaScript方法，弹出对话框显示信息
     function myFunction()
     {
-        alert("Hello World!233" + getCookie("JSESSIONID"));
+        alert("Hello World!233" + getcookie("JSESSIONID") + "3445");
     }
     function onAlert()
     {
