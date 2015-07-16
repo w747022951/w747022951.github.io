@@ -6,16 +6,16 @@ This is a HTML Page
 <!-- JavaScript脚本，主要包括了按钮要执行的函数，显示对话框等 -->
 <script type="text/javascript">
 
-function getCookie(name) 
-{ 
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
- 
-    if(arr=document.cookie.match(reg))
- 
-        return unescape(arr[2]); 
-    else 
-        return null; 
-} 
+function isAndroid() {
+    return isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+}
+
+function getCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)"); 
+    if (arr = document.cookie.match(reg)) 
+    return unescape(arr[2]);
+    else return null;
+}
   
     //JavaScript方法，弹出对话框显示信息
     function myFunction()
@@ -29,9 +29,13 @@ function getCookie(name)
     }
     function onConfirm()
     {
-        console.log("onConfirm method");
-        var b = confirm("are you sure to login?");
-        alert("your choice is " + b);
+        if(isAndroid()){
+            alert("android");
+            JavaScriptInterface.showToast("toast");   
+        }
+        else{
+            alert("other");
+        }
     }
     function onPrompt()
     {
