@@ -1,3 +1,0 @@
-[submodule "submodule/config"]
-	path = submodule/config
-	url = git@git.oschina.net:wuduohangcheng/config.git
